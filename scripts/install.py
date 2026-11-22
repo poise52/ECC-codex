@@ -50,6 +50,8 @@ def parser():
     cli.add_argument("--dry-run", action="store_true", help="Validate and print the plan without writing")
     cli.add_argument("--uninstall", action="store_true", help="Remove only selected links pointing to this checkout")
     cli.add_argument("--list", action="store_true", help="List available profiles and skills without writing")
+    cli.add_argument("--list-plugins", action="store_true", help="List optional plugin bundles and restore methods")
+    cli.add_argument("--plugins", nargs="+", metavar="NAME", help="Install named plugins with Codex; 'all' selects the plugin catalog")
     return cli
 
 
@@ -121,6 +123,17 @@ def main(argv=None):
     cli = parser()
     args = cli.parse_args(argv)
     try:
+        if args.list_plugins or args.plugins:
+            if args.profile or args.project is not None or args.dest is not None or args.uninstall or args.list:
+                raise ValueError("Plugin mode cannot be combined with skill profiles, project/dest scopes, --list, or --uninstall")
+            if args.list_plugins and args.plugins:
+                raise ValueError("Choose --list-plugins or --plugins, not both")
+            from plugin_install import run_plugins, show_catalog
+            if args.list_plugins:
+                show_catalog()
+            else:
+                run_plugins(args.plugins, dry_run=args.dry_run)
+            return 0
         data = catalog()
         if args.list:
             for name, skills in data["profiles"].items():

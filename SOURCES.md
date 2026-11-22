@@ -52,12 +52,77 @@ and macro-based Swift Testing suite could not be fully validated because the
 installed Command Line Tools lacked `SwiftUIMacros` and `TestingMacros` plugins.
 No UI-runner or macro-test success is claimed.
 
+## Haskell sources
+
+The `haskell` profile adapts [mightybyte/haskell-skill](https://github.com/mightybyte/haskell-skill)
+at commit `2c34b722a43d9fae0923ba239acfd8400e929bfb`, inspected on 2026-11-11.
+The original `haskell-coder` and `haskell-reviewer` entrypoints and selected
+performance, effects, Cabal, and extension references were consolidated into
+[ecc-haskell](skills/ecc-haskell/SKILL.md). Doug Beardsley's BSD-3-Clause notice
+and terms are retained in the skill's [LICENSE](skills/ecc-haskell/LICENSE).
+
+The six local references are edited adaptations. They preserve project-specific
+compiler/build/formatting choices, distinguish transformer order from shared
+mutation, and do not require ReaderT, textual errors, a fixed extension list,
+whole-module imports, or an author-specific record naming scheme. Performance
+guidance corrects the Text encoding/length and Criterion evaluation-depth
+claims. No automatic learning capture, upstream PR workflow, alignment checker,
+or unimplemented model-eval CI job is imported.
+
+The upstream eval prompts were read as review material, not executed as a model
+evaluation. Local structural/install checks and compiled example behavior do
+not establish that Codex will select the skill correctly for every request.
+
+The four complete local example modules were compiled with GHC 9.10.3,
+Haskell2010, `-Wall -Werror`. Sixteen runtime scenarios checked constructor
+bounds/roundtrips, transformer-order results, concurrent STM updates, WHNF versus
+NF, and strict accumulation. A negative compilation check confirmed that the
+hidden constructor cannot be called from another module. No additional Haskell
+packages were installed; no QuickCheck/Hspec or Criterion runner is claimed.
+
+## Optional plugins
+
+The plugin catalog was captured on 2026-11-22 using native Codex CLI
+`0.171.0-alpha.13` plugin/marketplace inventory, Plugin Management installation
+metadata, and installed package manifests. Only portable names, observed
+versions, and installation methods are recorded; no account identifiers,
+credentials, user configuration, or runtime implementation caches are included.
+`cached-bundle` explicitly denotes cache observation rather than a verified
+current installation. Native CLI and connector installation states are recorded
+separately because the two inventories do not expose the same surface.
+
+[samber/cc-skills](https://github.com/samber/cc-skills) is included at the user's
+installed commit `123cb155f5ab5751fc13c8027fbfa5eb0d3773c6`, plugin version `2.4.0`.
+Its 21 skill directories and runtime references/assets are preserved as an
+optional native plugin. The MIT notice is retained at
+[plugins/cc-skills/LICENSE](plugins/cc-skills/LICENSE), and its source record is
+[UPSTREAM.json](plugins/cc-skills/UPSTREAM.json). Repository/CI/publishing setup,
+eval suites, and generated artifacts are omitted. The compatibility manifest is
+limited to the skill bundle; no hooks or account connections are added.
+
+OpenAI plugins are restored from their official source or supported app runtime
+rather than redistributed from private local caches. The four marketplace
+selectors were checked against the local official marketplace. Google Contacts
+and Sites use the plugin directory/app connection flow because they were not
+listed as CLI marketplace entries in this snapshot. Host-managed feature names
+do not promise availability in every client, account, or future release.
+
+The new installer mode is tested against a simulated native CLI for argument
+boundaries, dry-run, conflicts, idempotence, disabled-state preservation, and
+partial failure. Real connector installation or OAuth authorization was not run
+as a test. The vendored workflows themselves were not all executed or model-evaluated.
+
 Primary documentation checked during adaptation:
 
 - [Codex skill discovery and authoring](https://learn.chatgpt.com/docs/build-skills)
 - [Rust 2024 edition guide](https://doc.rust-lang.org/edition-guide/rust-2024/index.html)
 - [Zig language documentation](https://ziglang.org/documentation/)
 - [Swift 6.2 language and concurrency changes](https://www.swift.org/blog/swift-6.2-released/)
+- [Text representation and character length](https://github.com/haskell/text/blob/master/src/Data/Text.hs)
+- [Criterion evaluation depth](https://github.com/haskell/criterion/blob/master/Criterion/Main.hs)
+- [GHC 9.2.8 bundled library versions](https://downloads.haskell.org/ghc/9.2.8/docs/html/users_guide/9.2.8-notes.html)
+- [Codex plugin packaging and local marketplaces](https://developers.openai.com/plugins/build/plugins)
+- [Codex native CLI reference](https://learn.chatgpt.com/docs/cli/reference)
 
 Documentation examples are conditional reference material. Match them to the
 target project's dependency versions and actual toolchain. No claim is made

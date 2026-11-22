@@ -1,0 +1,175 @@
+{
+  "schema_version": 1,
+  "snapshot_date": "2026-11-22",
+  "plugins": [
+    {
+      "name": "browser",
+      "display_name": "Browser",
+      "kind": "host",
+      "observed": "installed-cli",
+      "observed_version": "26.1117.41037",
+      "url": "https://learn.chatgpt.com/docs/plugins"
+    },
+    {
+      "name": "cc-skills",
+      "display_name": "Engineering & Marketing Skills (21 skills)",
+      "kind": "bundled",
+      "observed": "installed-global-skills",
+      "observed_version": "2.4.0",
+      "marketplace": "ecc-plugins",
+      "path": "plugins/cc-skills"
+    },
+    {
+      "name": "codex-app-tools",
+      "display_name": "codex-app-tools",
+      "kind": "host",
+      "observed": "installed-cli",
+      "observed_version": "26.1117.41037",
+      "url": "https://learn.chatgpt.com/docs/plugins"
+    },
+    {
+      "name": "computer-use",
+      "display_name": "Computer Use",
+      "kind": "host",
+      "observed": "installed-cli",
+      "observed_version": "1.0.1001980",
+      "url": "https://learn.chatgpt.com/docs/plugins"
+    },
+    {
+      "name": "documents",
+      "display_name": "Documents",
+      "kind": "host",
+      "observed": "installed-cli",
+      "observed_version": "26.1119.11507",
+      "url": "https://learn.chatgpt.com/docs/plugins"
+    },
+    {
+      "name": "github",
+      "display_name": "GitHub",
+      "kind": "marketplace",
+      "observed": "installed-connector",
+      "observed_version": "0.1.13-77c10e110b37",
+      "marketplace": "openai-curated"
+    },
+    {
+      "name": "gmail",
+      "display_name": "Gmail",
+      "kind": "marketplace",
+      "observed": "installed-connector",
+      "observed_version": "0.1.10",
+      "marketplace": "openai-curated"
+    },
+    {
+      "name": "google-calendar",
+      "display_name": "Google Calendar",
+      "kind": "marketplace",
+      "observed": "installed-connector",
+      "observed_version": "1.2.7",
+      "marketplace": "openai-curated"
+    },
+    {
+      "name": "google-contacts",
+      "display_name": "Google Contacts",
+      "kind": "directory",
+      "observed": "installed-connector",
+      "observed_version": "1.0.0",
+      "url": "https://chatgpt.com/plugins"
+    },
+    {
+      "name": "google-drive",
+      "display_name": "Google Drive",
+      "kind": "marketplace",
+      "observed": "installed-connector",
+      "observed_version": "0.1.28",
+      "marketplace": "openai-curated"
+    },
+    {
+      "name": "openai-templates",
+      "display_name": "Default templates",
+      "kind": "host",
+      "observed": "cached-bundle",
+      "observed_version": "0.1.1",
+      "url": "https://learn.chatgpt.com/docs/plugins"
+    },
+    {
+      "name": "pages",
+      "display_name": "Pages",
+      "kind": "host",
+      "observed": "cached-bundle",
+      "observed_version": "0.1.26",
+      "url": "https://learn.chatgpt.com/docs/plugins"
+    },
+    {
+      "name": "pdf",
+      "display_name": "PDF",
+      "kind": "host",
+      "observed": "installed-cli",
+      "observed_version": "26.1119.11507",
+      "url": "https://learn.chatgpt.com/docs/plugins"
+    },
+    {
+      "name": "plugin-management",
+      "display_name": "Plugin Management",
+      "kind": "host",
+      "observed": "cached-bundle",
+      "observed_version": "0.1.0",
+      "url": "https://learn.chatgpt.com/docs/plugins"
+    },
+    {
+      "name": "presentations",
+      "display_name": "Presentations",
+      "kind": "host",
+      "observed": "installed-cli",
+      "observed_version": "26.1119.11507",
+      "url": "https://learn.chatgpt.com/docs/plugins"
+    },
+    {
+      "name": "sites",
+      "display_name": "Sites",
+      "kind": "directory",
+      "observed": "installed-connector",
+      "observed_version": "1.1.7",
+      "url": "https://chatgpt.com/plugins"
+    },
+    {
+      "name": "spreadsheets",
+      "display_name": "Spreadsheets",
+      "kind": "host",
+      "observed": "installed-cli",
+      "observed_version": "26.1119.11507",
+      "url": "https://learn.chatgpt.com/docs/plugins"
+    },
+    {
+      "name": "template-creator",
+      "display_name": "Template Creator",
+      "kind": "host",
+      "observed": "installed-cli",
+      "observed_version": "26.1119.11507",
+      "url": "https://learn.chatgpt.com/docs/plugins"
+    },
+    {
+      "name": "unified-computer-use",
+      "display_name": "unified-computer-use",
+      "kind": "host",
+      "observed": "installed-cli",
+      "observed_version": "26.1117.41037",
+      "url": "https://learn.chatgpt.com/docs/plugins"
+    },
+    {
+      "name": "visualize",
+      "display_name": "Visualize",
+      "kind": "host",
+      "observed": "installed-cli",
+      "observed_version": "1.0.109",
+      "url": "https://learn.chatgpt.com/docs/plugins"
+    },
+    {
+      "name": "work-pets",
+      "display_name": "Pets",
+      "kind": "host",
+      "observed": "cached-bundle",
+      "observed_version": "0.1.6",
+      "url": "https://learn.chatgpt.com/docs/plugins"
+    }
+  ]
+}

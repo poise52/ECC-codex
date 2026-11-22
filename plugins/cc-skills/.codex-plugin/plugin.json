@@ -1,0 +1,11 @@
+{
+  "name": "cc-skills",
+  "version": "2.4.0",
+  "description": "Engineering, design, research, and writing skills from the installed samber/cc-skills snapshot.",
+  "author": {
+    "name": "Samuel Berthe"
+  },
+  "repository": "https://github.com/samber/cc-skills",
+  "license": "MIT",
+  "skills": "./skills/"
+}
