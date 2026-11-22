@@ -7,10 +7,12 @@ import sys
 from urllib.parse import unquote, urlsplit
 
 from install import ROOT, catalog
+from plugin_install import load_catalog
 
 
 def validate(root=ROOT):
     data = catalog(root)
+    load_catalog(root)
     errors = []
     names = {name for group in data["profiles"].values() for name in group}
     for name in sorted(names):
@@ -57,7 +59,7 @@ def main():
     if errors:
         print("\n".join(errors), file=sys.stderr)
         return 1
-    print(f"Validated {len(names)} skills, profile catalog, and local Markdown references.")
+    print(f"Validated {len(names)} ECC skills, profile catalog, optional plugins, and local Markdown references.")
     return 0
 
 

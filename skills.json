@@ -5,7 +5,8 @@
     "web",
     "rust",
     "zig",
-    "swift"
+    "swift",
+    "haskell"
   ],
   "profiles": {
     "core": [
@@ -36,6 +37,9 @@
       "ecc-swift",
       "ecc-swiftui",
       "ecc-swift-testing"
+    ],
+    "haskell": [
+      "ecc-haskell"
     ],
     "infra": [
       "ecc-postgres",

@@ -1,14 +1,15 @@
 # ECC для Codex
 
-Локальный набор для Go, JavaScript/TypeScript, Rust 2024, Zig и Swift/SwiftUI.
-19 самостоятельных скиллов: 17 в стандартной установке, PostgreSQL и Docker —
+Локальный набор для Go, JavaScript/TypeScript, Rust 2024, Zig, Swift/SwiftUI и Haskell.
+20 самостоятельных скиллов: 18 в стандартной установке, PostgreSQL и Docker —
 в опциональном профиле `infra`. Объёмные примеры хранятся в `references/`
 и читаются по задаче, а не загружаются целиком.
 
 ## Установка
 
-Нужны Python 3.9+ и POSIX shell. npm, дополнительные Python-пакеты и сеть
-для установки не нужны.
+Для установки основных скиллов нужны Python 3.9+ и POSIX shell. npm,
+дополнительные Python-пакеты и сеть не нужны. Опциональные плагины устанавливаются
+через Codex CLI и могут требовать сеть и подключение аккаунта.
 
 Из корня этого репозитория:
 
@@ -33,6 +34,7 @@
 ```sh
 ./install.sh --profile core --profile rust --profile zig
 ./install.sh --profile swift
+./install.sh --profile haskell
 ./install.sh --profile infra
 ./install.sh --profile all
 ```
@@ -68,6 +70,7 @@ MCP-серверы и хуки установщик не меняет.
 | `rust` | `ecc-rust`, `ecc-rust-unsafe`, `ecc-rust-navigation` | Да |
 | `zig` | `ecc-zig` | Да |
 | `swift` | `ecc-swift`, `ecc-swiftui`, `ecc-swift-testing` | Да |
+| `haskell` | `ecc-haskell` | Да |
 | `infra` | `ecc-postgres`, `ecc-docker` | Нет |
 
 Все имена имеют префикс `ecc-`, чтобы не пересекаться с другими наборами.
@@ -92,6 +95,35 @@ smart pointers, mutability, traits, типового проектировани�
 «метапознания» и рекламные заставки. Unsafe-материалы проверены и переработаны.
 Edition 2024 выбирается для новых проектов; существующие edition/MSRV и
 зафиксированный toolchain сохраняются.
+
+Haskell-профиль объединяет разработку и code review в одном `ecc-haskell`.
+Материалы `mightybyte/haskell-skill` переработаны в шесть справочников: типы и
+ошибки, эффекты/concurrency, тестирование, производительность, сборка и extensions.
+Исправлены рекомендации по `Text`, глубине вычисления и бенчмаркам; ReaderT,
+`StateT`/`ExceptT`, типы ошибок, импорты и имена полей выбираются по задаче и
+правилам проекта. BSD-3-Clause лицензия и версия источника сохранены.
+Для добавления к существующей установке: `./install.sh --profile haskell`.
+
+## Дополнительные плагины
+
+В репозитории есть отдельный [каталог плагинов](plugins/README.md), собранный
+по текущему набору Codex. `cc-skills` включён целиком как опциональный MIT-пакет
+с 21 скиллом. GitHub, Gmail, Google Calendar и Google Drive можно загрузить
+через официальный marketplace. Встроенные runtime-инструменты и подключения
+через приложение описаны в каталоге со своим способом восстановления.
+
+```sh
+./install.sh --list-plugins
+./install.sh --plugins cc-skills --dry-run
+./install.sh --plugins cc-skills
+./install.sh --plugins github gmail google-calendar google-drive
+```
+
+`./install.sh --plugins all` выбирает весь каталог: устанавливает доступные
+через CLI пакеты, а для остальных выводит способ подключения или необходимость
+runtime приложения. Это отдельный режим: обычный `./install.sh` и
+`--profile all` устанавливают только ECC-скиллы. Подробности и список всех
+пакетов — в [plugins/README.md](plugins/README.md).
 
 Убраны обвязка других агентов, старый npm-инсталлятор, переводы, команды,
 автоматические хуки, дубликаты, прочие языковые наборы и неинженерные скиллы.

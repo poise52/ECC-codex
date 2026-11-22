@@ -1,0 +1,34 @@
+{
+  "repository": "https://github.com/samber/cc-skills",
+  "commit": "123cb155f5ab5751fc13c8027fbfa5eb0d3773c6",
+  "plugin_version": "2.4.0",
+  "snapshot_date": "2026-11-22",
+  "skills": [
+    "chrome-extension",
+    "conventional-git",
+    "copywriting-cta",
+    "copywriting-hooks",
+    "copywriting-prose-creator",
+    "copywriting-tone-of-voice-creator",
+    "crxjs",
+    "deep-research",
+    "frontend-design-deslop",
+    "humaniseur-fr",
+    "humanizer-en-asd-ste100",
+    "influence-and-negotiation",
+    "linkedin-ghostwriting",
+    "press-release-writer",
+    "promql-cli",
+    "site-launch-checklist",
+    "skill-progressive-disclosure-design",
+    "snyk-agent-scan-compliance",
+    "substack-ghostwriting",
+    "technical-article-writer",
+    "training-report"
+  ],
+  "omitted": [
+    "repository metadata",
+    "CI and publishing setup",
+    "eval suites and generated artifacts"
+  ]
+}
